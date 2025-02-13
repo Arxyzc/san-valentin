@@ -1,25 +1,25 @@
 /* 🎠 Contenedor principal del carrusel */
 .carousel-container {
-    position: absolute; /* 🔥 Cambiamos 'fixed' a 'absolute' */
-    bottom: 120px; /* 🔥 Más espacio para que no tape el botón */
+    position: absolute; /* 🔥 Asegura que esté en la parte inferior sin afectar el botón */
+    bottom: 0; /* 🔥 Lo coloca en la parte más baja */
     left: 50%;
     transform: translateX(-50%);
     width: 100%;
-    height: 400px;
+    height: 250px; /* 🔥 Altura reducida para que no tape el contenido */
     display: flex;
     justify-content: center;
     align-items: center;
     perspective: 3000px;
-    z-index: 5; /* 🔥 Asegura que no bloquee el botón */
+    z-index: 5; /* 🔥 Mantiene el carrusel debajo de otros elementos */
 }
 
-/* 📱 Ajustes en móviles */
+/* 📱 Ajuste en móviles */
 @media (max-width: 768px) {
     .carousel-container {
-        bottom: 180px; /* 🔥 Más espacio en móviles */
-        height: 300px; /* 🔥 Reducimos el tamaño del carrusel */
+        height: 200px; /* 🔥 Un poco más compacto en móviles */
     }
 }
+
 
 /* 🎠 Carrusel 3D fijo */
 .carousel {
