@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="App">
       <NightSky />
-      <h1>¿Quieres ser mi san Valentin?</h1>
+      <h1>¿Quieres ser mi San Valentín?</h1>
       <div className="content">
         <Karaoke />
       </div>

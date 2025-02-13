@@ -1,0 +1,35 @@
+/* 🪐 Contenedor del planeta */
+.photo-planet-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+    height: 100vh; /* 🔥 Ahora ocupará el 100% de la pantalla */
+    overflow: hidden;
+  }
+  
+  /* 📌 Ajuste del canvas para cubrir toda la pantalla */
+  canvas {
+    display: block;
+    width: 100vw;
+    height: 100vh; /* 🔥 Asegura que siempre cubra toda la pantalla */
+    position: absolute;
+    top: 0;
+    left: 0;
+  }  
+  
+  /* 📌 Cuando una imagen se agranda */
+  .enlarged {
+    transform: scale(1.5) translateZ(200px);
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  /* 🌟 Transición para las imágenes al acercarse */
+  .photo-planet-container img {
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .photo-planet-container img:hover {
+    transform: scale(1.2);
+  }

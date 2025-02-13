@@ -177,3 +177,20 @@ button.hide {
     opacity: 0;
   }
 }
+button {
+  position: relative;
+  z-index: 10; /* 🔥 Asegura que el botón esté siempre encima */
+  margin-top: 20px;
+}
+
+/* 📱 Ajustes en móviles */
+@media (max-width: 768px) {
+  button {
+      position: fixed;
+      bottom: 20px; /* 🔥 Fija el botón en la parte inferior */
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 15; /* 🔥 Asegura que esté por encima del carrusel */
+  }
+}
+
