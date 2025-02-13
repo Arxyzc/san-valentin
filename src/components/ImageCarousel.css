@@ -1,0 +1,63 @@
+/* Contenedor principal del carrusel */
+.carousel-container {
+    position: fixed;
+    bottom: 80px; /* Más abajo en la pantalla */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 3000px; /* Mayor profundidad para evitar distorsión */
+    z-index: 10;
+}
+
+/* Carrusel 3D fijo */
+.carousel {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transform-origin: center; /* Fija el círculo en su lugar */
+    animation: rotate3D 30s linear infinite; /* Rotación más lenta */
+}
+
+/* Pausa la animación cuando el mouse está encima */
+.carousel-container.paused .carousel {
+    animation-play-state: paused;
+}
+
+/* Distribuir imágenes en un círculo 3D */
+.carousel-item {
+    position: absolute;
+    width: 140px; /* Imágenes más grandes */
+    height: 140px;
+    transform-origin: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Estilo de las imágenes */
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Efecto de agrandamiento y acercamiento al pasar el mouse */
+.carousel-item.hovered img {
+    transform: scale(1.3) translateZ(100px); /* Se agranda levemente y se acerca */
+    z-index: 1; /* Asegura que la imagen hovered esté al frente */
+}
+
+/* Animación para que las imágenes giren sobre su propio eje */
+@keyframes rotate3D {
+    from {
+        transform: rotateY(0deg);
+    }
+    to {
+        transform: rotateY(360deg);
+    }
+}

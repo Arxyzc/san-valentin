@@ -1,0 +1,63 @@
+/* Fondo oscuro */
+.night-sky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, #000428, #004e92);
+    z-index: -1; /* Para que esté detrás del contenido */
+    overflow: hidden;
+}
+
+/* Estrellas */
+.stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    animation: stars 200s linear infinite;
+}
+
+/* Destellos */
+.twinkling {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    animation: twinkling 5s linear infinite;
+}
+
+/* Animación de estrellas */
+/* @keyframes stars {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+} */
+
+/* Animación de destellos */
+@keyframes twinkling {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+  /* Estrellas generadas dinámicamente */
+.star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    border-radius: 50%;
+    animation: twinkling 2s infinite ease-in-out;
+}

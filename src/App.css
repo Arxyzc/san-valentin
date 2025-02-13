@@ -1,0 +1,179 @@
+/* Fondo estrellado */
+.night-sky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, #000428, #004e92);
+  z-index: -1; /* Para que esté detrás del contenido */
+  overflow: hidden;
+}
+
+/* Estrellas */
+.stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  animation: stars 200s linear infinite;
+}
+
+/* Destellos */
+.twinkling {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  animation: twinkling 5s linear infinite;
+}
+
+/* Animación de estrellas */
+/* @keyframes stars {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+} */
+
+/* Animación de destellos */
+@keyframes twinkling {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Estrellas generadas dinámicamente */
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  animation: twinkling 2s infinite ease-in-out;
+}
+
+/* Estilos existentes */
+body {
+  margin: 0;
+  padding: 0;
+  background-size: cover;
+  color: #fff;
+  font-family: "Great Vibes", cursive;
+  text-align: center;
+}
+
+.app {
+  position: relative; /* Asegura que el contenido esté por encima del fondo */
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+
+.karaoke {
+  font-size: 2rem;
+  color: #ff6f61;
+  text-shadow: 0 0 10px #ff6f61, 0 0 20px #ff6f61;
+}
+
+.gallery img {
+  width: 300px;
+  height: 300px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.3);
+  transition: opacity 1s ease-in-out;
+}
+
+button {
+  background: linear-gradient(to bottom, #000428, #000000);
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.5rem;
+  border-radius: 25px;
+  cursor: pointer;
+  box-shadow: 0 0 15px rgb(255, 255, 255), 0 0 30px rgba(7, 222, 250, 0.7);
+  transition: all 0.5s ease-in-out;
+  position: relative;
+  overflow: hidden;
+  animation: glow 2s infinite, pulse 2s infinite;
+}
+
+button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.9), 0 0 50px rgb(255, 255, 255);
+}
+
+button.hide {
+  opacity: 0;
+  pointer-events: none;
+}
+
+@keyframes glow {
+  0% {
+    color: #04cdff;
+    text-shadow: 0 0 5px #00f7ff, 0 0 10px #ffffff;
+  }
+  50% {
+    color: #ffffff;
+    text-shadow: 0 0 10px #050505, 0 0 20px #ffffff;
+  }
+  100% {
+    color: #0f8adb;
+    text-shadow: 0 0 5px #ffffff, 0 0 10px #0ee3ff;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.particle {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  animation: float 2s ease-out;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100px) scale(0.5);
+    opacity: 0;
+  }
+}
